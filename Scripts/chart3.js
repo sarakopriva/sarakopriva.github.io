@@ -89,6 +89,8 @@ const myChart3 = new Chart(ctx3, {
     ],
   },
   options: {
+    maintainAspectRatio: false,
+    responsive: true,
     plugins: {
       title: {
         display: true,

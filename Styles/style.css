@@ -67,6 +67,12 @@ a:visited {
 }
 
 @media (max-width: 1279px) {
+  div.chart1,
+  div.chart2,
+  div.chart3 {
+    width: 100vw;
+    margin: 0;
+  }
   /* * {
     background-color: red;
   } */
@@ -99,12 +105,50 @@ a:visited {
   .tab-row {
     margin: 8vh 0 0 0;
   }
+  body,
+  div.container {
+    width: 100vw;
+    /* overflow-x: hidden; */
+    /* background-color: red; */
+    padding: 0;
+    margin: 0;
+  }
+
+  div.row,
+  h1,
+  div.col-sm-12 {
+    width: 100vw;
+    /* padding: 0; */
+    /* margin: 0; */
+  }
+
+  h1 {
+    font-size: small;
+  }
+
+  .chart1,
+  .chart2,
+  .chart3 {
+    width: 100vw;
+  }
+
+  * {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
 }
 
-@media (min-width: 1280px) {
+/* @media (min-width: 2500px) {
   * {
     overflow: hidden;
   }
+} */
+
+@media (min-width: 1280px) {
+  /* * {
+    overflow: hidden;
+  } */
 
   h2 {
     /* background-color: rgb(26, 124, 125); */
@@ -295,3 +339,31 @@ html {
 h1 {
   color: #63462d;
 }
+
+.warning-message {
+  display: none;
+}
+
+/* @media screen and (max-width: 900px) {
+  div.container {
+    display: none;
+  }
+  .warning-message {
+    display: block;
+    font-size: small;
+    text-align: center;
+    width: 100vw;
+    overflow: hidden;
+    padding-top: 20vw;
+  }
+} */
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* * {
+  background-color: red;
+} */

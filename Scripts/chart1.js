@@ -24,6 +24,8 @@ new Chart(ctx, {
     ],
   },
   options: {
+    maintainAspectRatio: false,
+    responsive: true,
     plugins: {
       title: {
         display: true,

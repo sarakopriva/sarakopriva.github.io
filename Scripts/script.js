@@ -28,10 +28,22 @@ active = document.getElementById("active-button");
 active.classList.add("active");
 
 // Add an event listener to the window object to detect zoom changes
-window.addEventListener("resize", function () {
-  // Check if the zoom level has changed
-  if (window.innerWidth !== screen.width) {
-    // Reload the page
-    window.location.reload();
-  }
-});
+// window.addEventListener("resize", function () {
+//   if (window.innerWidth !== screen.width) {
+//     window.location.reload();
+//   }
+// });
+
+const mychart1 = document.getElementById("chart1");
+const mychart2 = document.getElementById("chart2");
+const mychart3 = document.getElementById("chart3");
+
+window.onresize = function () {
+  mychart1.resize();
+  mychart2.resize();
+  mychart3.resize();
+};
+// responsive
+// const canvas = document.getElementsByTagName("canvas");
+// canvas.width = "200";
+// canvas.height = auto;

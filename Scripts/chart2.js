@@ -33,6 +33,8 @@ new Chart(ctx2, {
     ],
   },
   options: {
+    maintainAspectRatio: false,
+    responsive: true,
     plugins: {
       title: {
         display: true,
