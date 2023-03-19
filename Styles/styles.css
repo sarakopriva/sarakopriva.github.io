@@ -88,3 +88,28 @@ a:visited {
     height: 50vh;
   }
 }
+
+div.buttons {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.5s ease-out;
+}
+
+.arrow {
+  width: 20px;
+  margin: 5px;
+  color: #545454;
+  border: 1px solid #545454;
+  background-color: white;
+  box-shadow: none;
+  padding: 2px;
+}
+
+.arrow:hover {
+  background-color: #545454;
+  border-color: #545454;
+  color: white;
+}

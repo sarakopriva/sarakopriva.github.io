@@ -27,6 +27,11 @@
     <link rel="stylesheet" href="Styles/styles.css" />
   </head>
   <body>
+    <div class="buttons">
+      <a href="#" onclick="scrollToTop()"><button class="arrow">↑</button></a>
+      <a href="#bottom"><button class="arrow">↓</button></a>
+    </div>
+
     <div class="container">
       <div class="row h-row">
         <h1>Who is Better at Preserving Forests?</h1>
@@ -67,7 +72,7 @@
       </div>
       <div class="row mt-4 mb-4">
         <div class="col container">
-          <div class="row">
+          <div class="row" id="bottom">
             <div class="col-md-9">
               ¹ The establishment of forest through planting and/or deliberate
               seeding and natural forest expansion

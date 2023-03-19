@@ -20,3 +20,24 @@ function openCity(evt, cityName) {
 
 active = document.getElementById("active-button");
 active.classList.add("active");
+
+function scrollToTop() {
+  window.scrollTo(0, 0);
+}
+
+const myDiv = document.querySelector(".buttons");
+let timerId;
+
+function handleScroll() {
+  // Make the div invisible
+  myDiv.style.opacity = 0;
+
+  // Clear the previous timer (if any) and set a new one
+  clearTimeout(timerId);
+  timerId = setTimeout(() => {
+    // Make the div visible again
+    myDiv.style.opacity = 1;
+  }, 3000); // Delay the visibility of the div for 3 seconds
+}
+
+window.addEventListener("scroll", handleScroll);
