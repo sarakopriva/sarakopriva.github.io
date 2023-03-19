@@ -115,3 +115,7 @@ div.buttons {
   border-color: #545454;
   color: rgb(145, 211, 207);
 }
+
+.first-arrow {
+  margin-bottom: 7vh;
+}
