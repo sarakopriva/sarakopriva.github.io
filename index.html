@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sl">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.5, minimum-scale=1.5"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A Forest Dashboard</title>
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,31 +24,22 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" type="text/css" href="Styles/style.css" />
+    <link rel="stylesheet" href="Styles/styles.css" />
   </head>
   <body>
-    <p class="warning-message">Please use this webpage on a larger device.</p>
     <div class="container">
-      <div class="row first-row">
-        <!-- <h1>Forests Health Monitor</h1> -->
+      <div class="row h-row">
         <h1>Who is Better at Preserving Forests?</h1>
-        <!-- <p>A Dashboard on the Benefits of Forests and Conservation Efforts</p> -->
       </div>
-
-      <div class="row main-row1">
-        <div class="first-chart col-sm-12 height">
-          <div class="chart1">
-            <canvas id="myChart1"></canvas>
-          </div>
+      <div class="row">
+        <div class="chart-div col-sm-12 col-md-6">
+          <canvas id="myChart1"></canvas>
         </div>
-
-        <div class="second-chart col-sm-12 height">
-          <div class="chart2">
-            <canvas id="myChart2"></canvas>
-          </div>
+        <div class="chart-div col-sm-12 col-md-6 chart2-div">
+          <canvas id="myChart2"></canvas>
         </div>
       </div>
-      <div class="row tab-row">
+      <div class="row tab-row col-sm-12 col-md-6">
         <div class="tab">
           <button
             id="active-button"
@@ -69,89 +57,66 @@
           </button>
         </div>
       </div>
-      <div class="row main-row2">
-        <div class="third-chart col-sm-12 height">
-          <div class="chart3 tab-div">
-            <!-- <div class="tab-chart"> -->
-            <canvas id="myChart3"> </canvas>
-            <!-- </div> -->
-          </div>
+      <div class="row">
+        <div class="chart-div col-sm-12 col-md-6">
+          <canvas id="myChart3"></canvas>
         </div>
-
-        <div class="worldwrapper col-sm-12 height">
+        <div class="col-sm-12 col-md-6">
           <img id="img" src="Pictures/world.png" class="worldimg" /><br />
         </div>
       </div>
-      <div class="row fourth-row">
-        <div class="fourt-row-column1">
-          <!-- <span class="child-span"
-            >¹ Increasing the forest area by planting new trees</span
-          > -->
-          <span class="child-span"
-            >¹ The establishment of forest through planting and/or deliberate
-            seeding and natural forest expansion
-            <a
-              href="https://ourworldindata.org/grapher/annual-forest-expansion"
-              target="_blank"
-              >(source)</a
-            ></span
-          >
-          <br />
-          <span class="child-span"
-            >² Purposeful clearing of forested land
-            <a
-              href="https://education.nationalgeographic.org/resource/deforestation/"
-              target="_blank"
-              >(source)</a
-            ></span
-          >
-          <br />
-        </div>
-        <div class="fourth-row-colum2">
-          <span class="child-span"
-            >³ based on STAI score (a self-report instrument for measuring
-            anxiety)</span
-          >
-          <br />
+      <div class="row mt-4 mb-4">
+        <div class="col container">
+          <div class="row">
+            <div class="col-md-9">
+              ¹ The establishment of forest through planting and/or deliberate
+              seeding and natural forest expansion
+              <a
+                href="https://ourworldindata.org/grapher/annual-forest-expansion"
+                target="_blank"
+                >(source)</a
+              ><br />
 
-          <span class="child-span"
-            >World Image
-            <a href="https://www.mapchart.net" target="_blank"
-              >(source)</a
-            ></span
-          >
-          <br />
-        </div>
-        <div class="fourth-row-column3">
-          <span class="child-span"
-            >[1]
-            <a
-              href="https://www.fao.org/forest-resources-assessment/2020/en/"
-              target="_blank"
-              >(source)</a
-            ></span
-          >
+              ² Purposeful clearing of forested land
+              <a
+                href="https://education.nationalgeographic.org/resource/deforestation/"
+                target="_blank"
+                >(source)</a
+              ><br />
 
-          <br />
-          <span class="child-span"
-            >[2]
-            <a
-              href="https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=ffc876115465447e2663f1d6174c92ae327cd1c3"
-              target="_blank"
-              >(source)</a
-            >
-          </span>
+              ³ based on STAI score (a self-report instrument for measuring
+              anxiety)
+              <br />
+            </div>
+            <div class="col-md-3">
+              World Image
+              <a href="https://www.mapchart.net" target="_blank">(source)</a>
+              <br />
+
+              [1]
+              <a
+                href="https://www.fao.org/forest-resources-assessment/2020/en/"
+                target="_blank"
+                >(source)</a
+              ><br />
+
+              [2]
+              <a
+                href="https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=ffc876115465447e2663f1d6174c92ae327cd1c3"
+                target="_blank"
+                >(source)</a
+              >
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- scripts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script> -->
-
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-stacked100@1.0.0"></script>
-    <script src="Scripts/chart1.js"></script>
-    <script src="Scripts/chart2.js"></script>
-    <script src="Scripts/chart3.js"></script>
-    <script src="Scripts/script.js"></script>
+    <script src="Scripts/chart1"></script>
+    <script src="Scripts/chart2"></script>
+    <script src="Scripts/chart3"></script>
+    <script src="Scripts/scripts.js"></script>
   </body>
 </html>

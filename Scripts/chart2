@@ -3,11 +3,7 @@ const ctx2 = document.getElementById("myChart2");
 new Chart(ctx2, {
   type: "bar",
   data: {
-    labels: [
-      // "Not stressed at all",
-      "Self-reported Stress Levels³", // "Včasih pod stresom",
-      // "Chronically stressed", // Kronično pod stresom
-    ],
+    labels: ["Self-reported Stress Levels³"],
     datasets: [
       {
         label: "Forest Day",
@@ -23,13 +19,6 @@ new Chart(ctx2, {
         borderColor: "rgb(187, 189, 194)",
         backgroundColor: "rgba(187, 189, 194, 0.1)",
       },
-      // {
-      //   label: "Difference",
-      //   data: [5, 7, 10],
-      //   borderWidth: 1,
-      //   borderColor: "rgb(45, 142, 229)",
-      //   backgroundColor: "rgba(45, 142, 229, 0.5)",
-      // },
     ],
   },
   options: {
@@ -44,10 +33,6 @@ new Chart(ctx2, {
     scales: {
       y: {
         beginAtZero: true,
-        // title: {
-        //   display: true,
-        //   text: "Self-reported stress levels",
-        // },
         suggestedMax: 12,
         grid: {
           display: false,
