@@ -1,11 +1,13 @@
 Chart.defaults.font.family = "Lato";
+Chart.defaults.datasets.bar.borderColor = "#40b5b2";
+Chart.defaults.datasets.bar.backgroundColor = "#40b5b280";
+
 const btn1 = document.getElementsByClassName("tablinks")[0];
 const btn2 = document.getElementsByClassName("tablinks")[1];
 btn1.addEventListener("click", openCity);
 btn2.addEventListener("click", openCity);
 
 function openCity(evt, cityName) {
-  // Declare variables
   let i, tablinks;
 
   // Get all elements with class="tablinks" and remove the class "active"
@@ -41,3 +43,35 @@ function handleScroll() {
 }
 
 window.addEventListener("scroll", handleScroll);
+
+const buttonsDiv = document.querySelector(".buttons");
+
+function toggleButtonsVisibility() {
+  // Get the height of the document
+  const docHeight = Math.max(
+    document.body.scrollHeight,
+    document.documentElement.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.offsetHeight,
+    document.body.clientHeight,
+    document.documentElement.clientHeight
+  );
+
+  // Get the height of the viewport
+  const viewportHeight = window.innerHeight;
+
+  // Check if there is any vertical scrolling needed
+  if (docHeight <= viewportHeight) {
+    // If not, hide the div element with the class 'buttons'
+    buttonsDiv.style.display = "none";
+  } else {
+    // If there is vertical scrolling needed, show the div element
+    buttonsDiv.style.display = "flex";
+  }
+}
+
+// Call the function on page load to set the initial visibility of the buttons
+toggleButtonsVisibility();
+
+// Add an event listener to the window object that listens for the 'resize' event
+window.addEventListener("resize", toggleButtonsVisibility);

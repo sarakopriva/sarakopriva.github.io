@@ -1,13 +1,18 @@
+:root {
+  --primarna-barva: #63462d;
+  --sekundarna-barva: #1d5452;
+}
+
 * {
   padding: 0;
   margin: 0;
   font-family: "Lato";
   font-weight: 400;
-  color: rgb(84, 84, 84);
+  color: #545454;
 }
 
 h1 {
-  color: #63462d;
+  color: var(--primarna-barva);
   padding: 0px !important;
   font-family: "Playfair Display";
   font-weight: 900;
@@ -21,10 +26,20 @@ canvas {
 }
 
 a {
-  color: #63462d;
+  color: var(--sekundarna-barva);
 }
+
+div.buttons {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.5s ease-out;
+}
+
 a:visited {
-  color: rgb(145, 211, 207);
+  color: var(--primarna-barva);
 }
 
 .tab button {
@@ -43,13 +58,13 @@ a:visited {
 }
 
 .tab button.active {
-  background-color: #63462d;
+  background-color: var(--primarna-barva);
   color: white;
 }
 
 .tab {
   overflow: scroll;
-  border: 1px solid #63462d;
+  border: 1px solid var(--primarna-barva);
   padding: 0;
 }
 
@@ -72,6 +87,24 @@ a:visited {
   transform: translateY(-50%);
 }
 
+.arrow {
+  width: auto;
+  height: auto;
+  margin: 5px;
+  border: none;
+  background-color: #ffffff00;
+  box-shadow: none;
+  padding: 2px;
+}
+
+.arrow:hover {
+  color: var(--primarna-barva);
+}
+
+.first-arrow {
+  margin-bottom: 7vh;
+}
+
 @media (min-width: 768px) {
   .chart2-div {
     padding-left: 7%;
@@ -87,35 +120,4 @@ a:visited {
   canvas {
     height: 50vh;
   }
-}
-
-div.buttons {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  display: flex;
-  flex-direction: column;
-  transition: opacity 0.5s ease-out;
-}
-
-.arrow {
-  width: auto;
-  height: auto;
-  margin: 5px;
-  color: #545454;
-  /* border: 1px solid #545454; */
-  border: none;
-  background-color: rgba(255, 255, 255, 0);
-  box-shadow: none;
-  padding: 2px;
-}
-
-.arrow:hover {
-  background-color: #54545400;
-  border-color: #545454;
-  color: rgb(145, 211, 207);
-}
-
-.first-arrow {
-  margin-bottom: 7vh;
 }

@@ -65,8 +65,6 @@ const myChart3 = new Chart(ctx3, {
         label: protected,
         data: values,
         borderWidth: 1,
-        borderColor: "rgb(64, 181, 178)",
-        backgroundColor: "rgba(64, 181, 178, 0.5)",
         parsing: {
           yAxisKey: "continent",
           xAxisKey: "category.protected",
@@ -76,8 +74,8 @@ const myChart3 = new Chart(ctx3, {
         label: unprotected,
         data: values2,
         borderWidth: 1,
-        borderColor: "rgb(64, 181, 178)",
-        backgroundColor: "rgba(64, 181, 178, 0.1)",
+        borderColor: "#bbbdc2",
+        backgroundColor: "#bbbdc21a",
         parsing: {
           yAxisKey: "continent",
           xAxisKey: "category.protected",
@@ -144,9 +142,7 @@ const isMobile =
   );
 
 if (isMobile) {
-  // Detect touch events and apply hover effect on tap
   myChart3.canvas.addEventListener("touchstart", mouseoverHandler);
-  // Remove hover effect when touch ends
   myChart3.canvas.addEventListener("touchend", mouseleaveHandler);
 }
 

@@ -29,33 +29,36 @@
   <body>
     <div class="buttons">
       <a href="#" onclick="scrollToTop()" class="first-arrow"
-        ><button class="arrow">↑</button></a
+        ><button class="arrow" type="button">↑</button></a
       >
-      <a href="#bottom"><button class="arrow">↓</button></a>
+      <a href="#bottom"><button class="arrow" type="button">↓</button></a>
     </div>
 
     <div class="container">
-      <div class="row h-row">
+      <header class="row h-row">
         <h1>Who is Better at Preserving Forests?</h1>
-      </div>
-      <div class="row">
+      </header>
+      <section class="row">
         <div class="chart-div col-sm-12 col-md-6">
           <canvas id="myChart1"></canvas>
         </div>
         <div class="chart-div col-sm-12 col-md-6 chart2-div">
           <canvas id="myChart2"></canvas>
         </div>
-      </div>
-      <div class="row tab-row col-sm-12 col-md-6">
+      </section>
+      <nav class="row tab-row col-sm-12 col-md-6">
         <div class="tab">
           <button
+            type="button"
             id="active-button"
             class="tablinks"
             onclick="updateChart('protected')"
           >
             Protected Forest
           </button>
+
           <button
+            type="button"
             id="managed"
             class="tablinks"
             onclick="updateChart('managed')"
@@ -63,16 +66,21 @@
             Managed Forest
           </button>
         </div>
-      </div>
-      <div class="row">
+      </nav>
+      <section class="row">
         <div class="chart-div col-sm-12 col-md-6">
           <canvas id="myChart3"></canvas>
         </div>
         <div class="col-sm-12 col-md-6">
-          <img id="img" src="Pictures/world.png" class="worldimg" /><br />
+          <img
+            id="img"
+            src="Pictures/world.png"
+            class="worldimg"
+            alt="World Image"
+          /><br />
         </div>
-      </div>
-      <div class="row mt-4 mb-4">
+      </section>
+      <footer class="row mt-4 mb-4">
         <div class="col container">
           <div class="row" id="bottom">
             <div class="col-md-9">
@@ -116,14 +124,14 @@
             </div>
           </div>
         </div>
-      </div>
+      </footer>
     </div>
 
     <!-- scripts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="Scripts/scripts.js"></script>
     <script src="Scripts/chart1"></script>
     <script src="Scripts/chart2"></script>
     <script src="Scripts/chart3"></script>
-    <script src="Scripts/scripts.js"></script>
   </body>
 </html>
