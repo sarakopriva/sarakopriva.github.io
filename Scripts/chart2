@@ -3,7 +3,7 @@ const ctx2 = document.getElementById("myChart2");
 new Chart(ctx2, {
   type: "bar",
   data: {
-    labels: ["Self-reported Stress Levels³"],
+    labels: ["Self-reported Stress Levels³ (lower is better)"],
     datasets: [
       {
         label: "Forest Day",

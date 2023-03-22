@@ -12,7 +12,7 @@ new Chart(ctx, {
         borderSkipped: false,
       },
       {
-        label: "Deforestation²",
+        label: "Deforestation² (lower is better)",
         data: [-16, -15, -12, -10],
         borderWidth: 1,
         borderSkipped: false,
@@ -23,7 +23,6 @@ new Chart(ctx, {
   },
   options: {
     maintainAspectRatio: false,
-    responsive: true,
     plugins: {
       title: {
         display: true,
