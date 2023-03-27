@@ -1,4 +1,6 @@
-const values = [
+const ctx3 = document.getElementById("myChart3");
+
+const valuesPreserved = [
   { continent: "Africa", category: { protected: 27, managed: 24 } },
   { continent: "Asia", category: { protected: 25, managed: 64 } },
   { continent: "Europe", category: { protected: 6, managed: 96 } },
@@ -13,7 +15,7 @@ const values = [
   },
   { continent: "World", category: { protected: 18, managed: 54 } },
 ];
-const values2 = [
+const valuesUnpreserved = [
   { continent: "Africa", category: { protected: 73, managed: 76 } },
   { continent: "Asia", category: { protected: 75, managed: 36 } },
   { continent: "Europe", category: { protected: 94, managed: 4 } },
@@ -38,19 +40,19 @@ const title2 = [
   "management plans, by region, 2020 [1]",
 ];
 
-const arrayOfImages = [
-  "Pictures/africa.png",
-  "Pictures/asia.png",
-  "Pictures/europe.png",
-  "Pictures/namerica.png",
-  "Pictures/oceania.png",
-  "Pictures/samerica.png",
-  "Pictures/world2.png",
-  "Pictures/world.png",
-];
-
-const ctx3 = document.getElementById("myChart3");
 let count = 0;
+function returnTitle() {
+  if (count === 0) {
+    count++;
+    return title;
+  } else {
+    if (myChart3.data.datasets[0].parsing.xAxisKey === "category.protected") {
+      return title;
+    } else {
+      return title2;
+    }
+  }
+}
 
 const protected = "% Protected";
 const unprotected = "% Unprotected";
@@ -63,7 +65,7 @@ const myChart3 = new Chart(ctx3, {
     datasets: [
       {
         label: protected,
-        data: values,
+        data: valuesPreserved,
         borderWidth: 1,
         parsing: {
           yAxisKey: "continent",
@@ -72,7 +74,7 @@ const myChart3 = new Chart(ctx3, {
       },
       {
         label: unprotected,
-        data: values2,
+        data: valuesUnpreserved,
         borderWidth: 1,
         borderColor: "#bbbdc2",
         backgroundColor: "#bbbdc21a",
@@ -85,11 +87,10 @@ const myChart3 = new Chart(ctx3, {
   },
   options: {
     maintainAspectRatio: false,
-    responsive: true,
     plugins: {
       title: {
         display: true,
-        text: updateTitle(),
+        text: returnTitle(),
       },
       legend: {
         display: false,
@@ -112,28 +113,66 @@ const myChart3 = new Chart(ctx3, {
   },
 });
 
-const img = document.getElementById("img");
-
-function mouseoverHandler(event) {
-  const points = myChart3.getElementsAtEventForMode(
-    event,
-    "nearest",
-    {
-      intersect: true,
-    },
-    true
-  );
-  if (points.length) {
-    document.getElementById("img").src = arrayOfImages[points[0].index];
-  }
+function updateChart(option) {
+  myChart3.data.datasets[0].parsing.xAxisKey = `category.${option}`;
+  myChart3.data.datasets[1].parsing.xAxisKey = `category.${option}`;
+  myChart3.options.plugins.title.text = returnTitle();
+  myChart3.update();
 }
 
-function mouseleaveHandler(event) {
-  document.getElementById("img").src = arrayOfImages[7];
+// update tooltips
+
+function updateTooltipProtected() {
+  myChart3.data.datasets[0].label = protected;
+  myChart3.data.datasets[1].label = unprotected;
 }
 
-myChart3.canvas.addEventListener("mousemove", mouseoverHandler);
-myChart3.canvas.addEventListener("mouseleave", mouseleaveHandler);
+function updateTooltiManaged() {
+  myChart3.data.datasets[0].label = managed;
+  myChart3.data.datasets[1].label = unmanaged;
+}
+
+const protectedBtn = document.getElementById("protected");
+protectedBtn.addEventListener("click", updateTooltipProtected);
+
+const managedBtn = document.getElementById("managed");
+managedBtn.addEventListener("click", updateTooltiManaged);
+
+// images, change image on hover
+
+// const arrayOfImages = [
+//   "Pictures/africa.png",
+//   "Pictures/asia.png",
+//   "Pictures/europe.png",
+//   "Pictures/namerica.png",
+//   "Pictures/oceania.png",
+//   "Pictures/samerica.png",
+//   "Pictures/world2.png",
+//   "Pictures/world.png",
+// ];
+
+// const img = document.getElementById("img");
+
+// function mouseoverHandler(event) {
+//   const points = myChart3.getElementsAtEventForMode(
+//     event,
+//     "nearest",
+//     {
+//       intersect: true,
+//     },
+//     true
+//   );
+//   if (points.length) {
+//     img.src = arrayOfImages[points[0].index];
+//   }
+// }
+
+// function mouseleaveHandler(event) {
+//   img.src = arrayOfImages[7];
+// }
+
+// myChart3.canvas.addEventListener("mousemove", mouseoverHandler);
+// myChart3.canvas.addEventListener("mouseleave", mouseleaveHandler);
 
 // Check if user is on a mobile or tablet device
 const isMobile =
@@ -144,39 +183,4 @@ const isMobile =
 if (isMobile) {
   myChart3.canvas.addEventListener("touchstart", mouseoverHandler);
   myChart3.canvas.addEventListener("touchend", mouseleaveHandler);
-}
-
-function updateChart(option) {
-  myChart3.data.datasets[0].parsing.xAxisKey = `category.${option}`;
-  myChart3.data.datasets[1].parsing.xAxisKey = `category.${option}`;
-  myChart3.options.plugins.title.text = updateTitle();
-  myChart3.update();
-}
-function updateTitle() {
-  if (count === 0) {
-    count++;
-    return ["Proportion of forest", "in protected areas, by region, 2020 [1]"];
-  } else {
-    if (myChart3.data.datasets[0].parsing.xAxisKey === "category.protected") {
-      return title;
-    } else {
-      return title2;
-    }
-  }
-}
-
-const managedBtn = document.getElementById("managed");
-managedBtn.addEventListener("click", updateTooltiManaged);
-
-function updateTooltiManaged() {
-  myChart3.data.datasets[0].label = managed;
-  myChart3.data.datasets[1].label = unmanaged;
-}
-
-const activeBtn = document.getElementById("active-button");
-activeBtn.addEventListener("click", updateTooltipProtected);
-
-function updateTooltipProtected() {
-  myChart3.data.datasets[0].label = protected;
-  myChart3.data.datasets[1].label = unprotected;
 }

@@ -21,7 +21,6 @@ new Chart(ctx2, {
   },
   options: {
     maintainAspectRatio: false,
-    responsive: true,
     plugins: {
       title: {
         display: true,
@@ -31,7 +30,6 @@ new Chart(ctx2, {
     scales: {
       y: {
         beginAtZero: true,
-        suggestedMax: 12,
         grid: {
           display: false,
         },

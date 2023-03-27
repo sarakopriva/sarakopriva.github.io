@@ -20,7 +20,7 @@ function openCity(evt, cityName) {
   evt.currentTarget.className += " active";
 }
 
-active = document.getElementById("active-button");
+active = document.getElementById("protected");
 active.classList.add("active");
 
 function scrollToTop() {
@@ -75,3 +75,15 @@ toggleButtonsVisibility();
 
 // Add an event listener to the window object that listens for the 'resize' event
 window.addEventListener("resize", toggleButtonsVisibility);
+
+const img = document.getElementById("img");
+// const arrayOfImages = ["Pictures/protected.svg", "Pictures/managed.svg"];
+btn1.addEventListener("click", changeImgProt);
+btn2.addEventListener("click", changeImgMan);
+
+function changeImgProt() {
+  img.src = "Pictures/protected.png";
+}
+function changeImgMan() {
+  img.src = "Pictures/managed.png";
+}
