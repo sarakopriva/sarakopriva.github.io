@@ -5,7 +5,7 @@ const valuesPreserved = [
   { continent: "Asia", category: { protected: 25, managed: 64 } },
   { continent: "Europe", category: { protected: 6, managed: 96 } },
   {
-    continent: "North and Central America",
+    continent: "North & Central America",
     category: { protected: 11, managed: 59 },
   },
   { continent: "Oceania", category: { protected: 16, managed: 31 } },
@@ -13,14 +13,14 @@ const valuesPreserved = [
     continent: "South America",
     category: { protected: 31, managed: 17 },
   },
-  { continent: "World", category: { protected: 18, managed: 54 } },
+  // { continent: "World", category: { protected: 18, managed: 54 } },
 ];
 const valuesUnpreserved = [
   { continent: "Africa", category: { protected: 73, managed: 76 } },
   { continent: "Asia", category: { protected: 75, managed: 36 } },
   { continent: "Europe", category: { protected: 94, managed: 4 } },
   {
-    continent: "North and Central America",
+    continent: "North & Central America",
     category: { protected: 89, managed: 41 },
   },
   { continent: "Oceania", category: { protected: 84, managed: 69 } },
@@ -28,7 +28,7 @@ const valuesUnpreserved = [
     continent: "South America",
     category: { protected: 69, managed: 83 },
   },
-  { continent: "World", category: { protected: 82, managed: 46 } },
+  // { continent: "World", category: { protected: 82, managed: 46 } },
 ];
 
 const title = [

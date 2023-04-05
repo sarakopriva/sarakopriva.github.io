@@ -28,7 +28,7 @@ new Chart(ctx, {
         display: true,
         text: [
           "Forest expansion¹ and deforestation²",
-          "in million ha per year [1]",
+          "in million hectares per year [1]",
         ],
       },
     },
