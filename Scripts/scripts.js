@@ -87,3 +87,29 @@ function changeImgProt() {
 function changeImgMan() {
   img.src = "Pictures/managed.png";
 }
+
+// window.onload = function () {
+//   setTimeout(function () {
+//     btn2.click();
+//   }, 1000);
+//   setTimeout(function () {
+//     btn1.click();
+//   }, 3000);
+// };
+
+const observer = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (entry.intersectionRatio > 0) {
+      setTimeout(function () {
+        btn2.click();
+      }, 1000);
+      setTimeout(function () {
+        btn1.click();
+      }, 3000);
+      observer.unobserve(entry.target);
+    }
+  });
+});
+
+const target = document.getElementById("myChart3");
+observer.observe(target);
